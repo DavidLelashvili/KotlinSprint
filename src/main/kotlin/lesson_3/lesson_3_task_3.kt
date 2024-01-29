@@ -2,9 +2,9 @@ package lesson_3
 
 fun main() {
 
-    var moveNumber: Byte = 1
-    var from = "E2"
-    var to = "E4"
+    val moveNumber: Byte = 1
+    val from = "E2"
+    val to = "E4"
 
     println("$from-$to;$moveNumber")
 
