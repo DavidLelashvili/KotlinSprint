@@ -4,7 +4,7 @@ import java.util.*
 
 fun main() {
 
-    val durationInSeconds = 6480
+    val durationInSeconds: Short = 6480
 
     val hour = durationInSeconds / 60 / 60
     val minutes = durationInSeconds / 60 % 60
