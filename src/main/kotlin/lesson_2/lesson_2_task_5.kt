@@ -11,7 +11,7 @@ fun main() {
 //    S- ПОЛУЧАЕМАЯ СУММА.
 
     val deposit = 70000
-    val interestRate = 16.7
+    val interestRate: Double = 16.7
     val time = 20
     val s = deposit * (1 + interestRate / 100).pow(time)
 
