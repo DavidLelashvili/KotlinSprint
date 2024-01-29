@@ -5,7 +5,7 @@ fun main() {
     val name = "Татьяна"
     var secondName = "Андреева"
     val middleName = "Сергеевна"
-    var age = 20
+    var age: Byte = 20
 
     println("$secondName $name $middleName, $age")
 
