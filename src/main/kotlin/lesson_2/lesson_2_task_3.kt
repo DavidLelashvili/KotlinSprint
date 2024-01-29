@@ -2,9 +2,9 @@ package lesson_2
 
 fun main() {
 
-    val departureHour = 9
-    val departureMinute = 39
-    val durationInMinutes = 457
+    val departureHour: Byte = 9
+    val departureMinute: Byte = 39
+    val durationInMinutes: Short = 457
 
     val durationHours = durationInMinutes / 60
     val durationMinutes = durationInMinutes % 60
