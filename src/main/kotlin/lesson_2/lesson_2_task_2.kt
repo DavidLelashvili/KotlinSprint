@@ -2,24 +2,24 @@ package lesson_2
 
 fun main() {
 
-    val employeeCount = 50
-    val employeeSalary = 30000
-    val newcomersCount = 30
-    val newcomersSalary = 20000
+    val employeeCount :Byte = 50
+    val employeeSalary: Short= 30000
+    val newcomersCount: Byte = 30
+    val newcomersSalary: Short = 20000
 
-    val costEmployee = employeeCount * employeeSalary
+    val costEmployee: Int = employeeCount * employeeSalary
 
     println("Расходы на сотрудников до прихода стажеров - $costEmployee")
 
-    val costWithNewcomers = newcomersCount * newcomersSalary
+    val costWithNewcomers: Int = newcomersCount * newcomersSalary
 
     println("Расходы на стажеров - $costWithNewcomers")
 
-    val generalCost = costEmployee + costWithNewcomers
+    val generalCost: Int = costEmployee + costWithNewcomers
 
     println("Общие расходы на сотрудников после прихода стажеров - $generalCost")
 
-    val averegeSalary = generalCost / (newcomersCount + employeeCount)
+    val averegeSalary: Int = generalCost / (newcomersCount + employeeCount)
 
     println("Средняя ЗП сотрудника с учетом стажеров - $averegeSalary")
 
