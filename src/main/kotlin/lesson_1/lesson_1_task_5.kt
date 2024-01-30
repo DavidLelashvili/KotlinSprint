@@ -1,22 +1,14 @@
 package lesson_1
 
-import java.util.*
-
+const val MAGIC_60 = 60 //в часе - 60 минут, в минуте - 60 секунд
 fun main() {
 
     val durationInSeconds: Short = 6480
 
-    val hour = durationInSeconds / 60 / 60
-    val minutes = durationInSeconds / 60 % 60
-    val seconds = durationInSeconds % 60
+    val hour = durationInSeconds / MAGIC_60 / MAGIC_60
+    val minutes = durationInSeconds / MAGIC_60 % MAGIC_60
+    val seconds = durationInSeconds % MAGIC_60
 
-//    нашел вот такой вариант, буду рад если поделитесь, как было бы лучше сделать
-    val formatter = Formatter().format("%1\$02d:%2\$02d:%3\$02d", hour, minutes, seconds)
-
-    println(
-        """
-        Продолжительность в hh:mm:ss - $formatter
-    """.trimIndent()
-    )
+    println("%02d:%02d:%02d".format(hour, minutes, seconds))
 
 }
