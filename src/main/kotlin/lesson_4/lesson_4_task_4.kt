@@ -4,22 +4,10 @@ package lesson_4
 fun main() {
 
     val day = 5
-    val arms: Boolean
-    val abs: Boolean
-    val legs: Boolean
-    val back: Boolean
-
-    if (day % 2 == 0) {
-        arms = false
-        abs = false
-        legs = true
-        back = true
-    } else {
-        arms = true
-        abs = true
-        legs = false
-        back = false
-    }
+    val arms = day % 2 != 0
+    val abs = day % 2 != 0
+    val legs = day % 2 == 0
+    val back = day % 2 == 0
 
     println(
         """
