@@ -1,23 +1,18 @@
 package lesson_2
 
+const val MINUTES_IN_HOUR = 60
+
 fun main() {
 
     val departureHour: Byte = 9
     val departureMinute: Byte = 39
     val durationInMinutes: Short = 457
 
-    val durationHours = durationInMinutes / 60
-    val durationMinutes = durationInMinutes % 60
+    val arrivalTimeInMinutes = departureHour * MINUTES_IN_HOUR + departureMinute + durationInMinutes
 
-    var arrivalHour = departureHour + durationHours
-    var arrivalMinute = departureMinute + durationMinutes
+    val arrivalHour = arrivalTimeInMinutes / MINUTES_IN_HOUR
+    val arrivalMinute = arrivalTimeInMinutes % MINUTES_IN_HOUR
 
-    if (arrivalMinute > 60) {
-
-        arrivalHour += 1
-        arrivalMinute -= 60
-
-        println("Время прибытия поезда - $arrivalHour часов $arrivalMinute минут")
-    } else println("Время прибытия поезда - $arrivalHour часов $arrivalMinute минут")
+    println("Время прибытия поезда - $arrivalHour часов $arrivalMinute минут")
 
 }
