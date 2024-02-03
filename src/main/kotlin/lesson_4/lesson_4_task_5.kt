@@ -25,12 +25,10 @@ fun main() {
             (
                     isDamage == NORMAL_DAMAGE &&
                     crew in CREW_MIN..CREW_MAX &&
-                    boxes > NORMAL_BOXES &&
-                    (isGoodWeather == NORMAL_WEATHER || (isGoodWeather != NORMAL_WEATHER))
+                    boxes > NORMAL_BOXES
                     ) ||
                     (
-                            isDamage != NORMAL_DAMAGE &&
-                            crew <= CREW_MAX && //меньше либо равно, если я правильно понял формулировку "рекомендованный"
+                            crew == CREW_MAX &&
                             isGoodWeather == NORMAL_WEATHER &&
                             boxes >= 50
                             )
