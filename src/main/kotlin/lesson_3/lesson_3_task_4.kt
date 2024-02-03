@@ -1,20 +1,17 @@
 package lesson_3
 
-const val MOVE_TO_ONE_CELL = 1
-
 fun main() {
 
-    val moveNumberWhite1: Byte = 1
-    val moveNumberWhite2: Byte = 3
-    val from = "E2"
-    val to = "E4"
+    var moveNumber: Byte = 1
+    var from = "E2"
+    var to = "E4"
 
-    println("$from-$to;$moveNumberWhite1")
+    println("$from-$to;$moveNumber")
 
-    val d = "D"
-    val fromD: Byte = 2
-    val toD = (fromD + MOVE_TO_ONE_CELL).toString()
+    from = "D2"
+    to = "D3"
+    moveNumber = 3
 
-    println("$d$fromD-$d$toD;${moveNumberWhite2}")
+    println("$from-$to;$moveNumber")
 
 }
