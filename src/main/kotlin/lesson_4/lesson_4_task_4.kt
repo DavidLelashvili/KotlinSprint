@@ -4,10 +4,11 @@ package lesson_4
 fun main() {
 
     val day = 5
-    val arms = day % 2 != 0
-    val abs = day % 2 != 0
-    val legs = day % 2 == 0
-    val back = day % 2 == 0
+    val evenDay = day % 2
+    val arms = evenDay != 0
+    val abs = evenDay != 0
+    val legs = evenDay == 0
+    val back = evenDay == 0
 
     println(
         """
