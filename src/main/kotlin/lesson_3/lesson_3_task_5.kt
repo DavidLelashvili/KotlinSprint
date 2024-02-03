@@ -4,11 +4,9 @@ fun main() {
 
     val move = "D2-D4;0"
 
-    val listOfParts = move.split(";")
-    val moveNumber = listOfParts.get(index = 1)
-    val listFromTo = listOfParts.get(index = 0).split("-")
-    val from = listFromTo.first()
-    val to= listFromTo.last()
+    val from = move.take(2)
+    val to = move.slice(3..4)
+    val moveNumber = move.takeLast(1)
 
     println(from)
     println(to)
