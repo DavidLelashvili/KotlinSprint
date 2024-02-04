@@ -35,8 +35,6 @@ fun main() {
 
     val overlapSize = listUserNumber.intersect(smartRandomListOfNumbers).size
 
-    println(overlapSize)
-
     val checkResult = if (overlapSize == 3) "Невероятно! Вы угадали все числа и сорвали джекпот"
     else if (overlapSize == 2) "Сегодня ваш день! Вы отгадали 2 числа и выиграли крупный приз!"
     else if (overlapSize == 1) "Вы отгадали одно число и выиграли утешительный приз!"
