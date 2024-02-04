@@ -1,20 +1,20 @@
 package lesson_4
 
 const val NORMAL_HUMIDITY = 20
-const val NORMAL_TIME_OF_YEAR = "не зима"
+const val TIME_OF_YEAR = "зима"
+const val WEATHER_IS_SUNNY = true
+const val TENT_IS_OPEN = true
 
 fun main() {
 
-    val weatherIsSunny = true //погода солнечная
-    val tentIsOpen = true //тент открыт
     val humidity = 20
-    val timeOfYear = "зима"
+    val currentTimeOfYear = "зима"
 
     val conditionsIsGood: Boolean = (
-            weatherIsSunny &&
-                    tentIsOpen &&
+            WEATHER_IS_SUNNY &&
+                    TENT_IS_OPEN &&
                     humidity == NORMAL_HUMIDITY &&
-                    timeOfYear === NORMAL_TIME_OF_YEAR //тут наверное правильнее сравнивать ссылки, но может ошибаюсь
+                    currentTimeOfYear != TIME_OF_YEAR
             )
 
     println("Благоприятные ли условия сейчас для роста бобовых: $conditionsIsGood")
