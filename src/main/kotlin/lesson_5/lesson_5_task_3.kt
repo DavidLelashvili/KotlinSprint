@@ -17,8 +17,16 @@ fun main() {
     println("Введите второе число")
     val userNumberTwo = readln().toInt()
 
-    val checkResult = if ((userNumberOne == numberOne) && (userNumberTwo == numberTwo)) "Поздравляем! Вы выиграли гланый приз!"
-    else if ((userNumberOne == numberOne) || (userNumberTwo == numberTwo)) "Вы выиграли утешительный приз!"
+    val checkResult = if (
+        ((userNumberOne == numberOne) && (userNumberTwo == numberTwo)) ||
+        ((userNumberTwo == numberOne) && (userNumberOne == numberTwo))
+        ) "Поздравляем! Вы выиграли гланый приз!"
+    else if (
+        (userNumberOne == numberOne) ||
+        (userNumberTwo == numberTwo) ||
+        (userNumberOne == numberTwo) ||
+        (userNumberTwo == numberOne)
+        ) "Вы выиграли утешительный приз!"
     else "Неудача!"
 
     println("Загаданными числами были $numberOne и $numberTwo")
