@@ -3,15 +3,15 @@ package lesson_5
 fun main() {
 
     println("Введите первое число")
-    val a = readln().toInt()
+    val numberOne = readln().toInt()
 
     println("Введите второе число")
-    val b = readln().toInt()
+    val numberTwo = readln().toInt()
 
     println("Введите сумму первого и второго чисел")
-    val c = readln().toInt()
+    val sum = readln().toInt()
 
-    val checkResult = if ((a + b) == c) "Добро пожаловать!"
+    val checkResult = if ((numberOne + numberTwo) == sum) "Добро пожаловать!"
     else "Доступ запрещен"
 
     println(checkResult)
