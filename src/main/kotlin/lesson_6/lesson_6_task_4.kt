@@ -10,25 +10,21 @@ fun main() {
     val number = Random.nextInt(1..9)
     var userNumber: Int
     var userTries = 0
-    var checkResult = true
+    var rightNumber: Boolean
 
     println("У вас есть $MAX_TRIES попыток, чтобы угадать число от 1 до 9!")
 
-    while (checkResult == true && userTries != MAX_TRIES) {
+    do {
         println("Введите число")
         userNumber = readln().toInt()
 
-        checkResult = userNumber != number
-
+        rightNumber = userNumber == number
         userTries++
 
-        if ((checkResult == false) || userTries == MAX_TRIES) break
-        else println("Неудача, попробуйте снова")
+        if (rightNumber) println("Вы угадали! Это была великолепная игра!")
+        else if (userTries < MAX_TRIES) println("Неудача, попробуйте снова\nОстальнось попыток: ${MAX_TRIES-userTries}")
+        else println("Вы не угадали! Было загадано число $number")
 
-    }
-
-    if (checkResult == false) println("Вы угадали! Это была великолепная игра!")
-    else println("Вы не угадали! Было загадано число $number")
-
+    } while (!rightNumber && userTries != MAX_TRIES)
 
 }
