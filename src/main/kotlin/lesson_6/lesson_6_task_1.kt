@@ -10,8 +10,7 @@ fun main() {
 
     var userLogin: String
     var userPass: String
-    var validName: Boolean
-    var validPass:  Boolean
+    var isAuthorized: Boolean
 
     println("Для авторизации введите логин и пароль")
 
@@ -22,20 +21,13 @@ fun main() {
         println("Введите пароль")
         userPass = readln()
 
-        validName = (userLogin == registerLogin)
-        validPass = (userPass == registerPass)
+        isAuthorized = ((userLogin == registerLogin) && (userPass == registerPass))
 
-        if (
-            (validName) &&
-            (validPass)
-        ) println("Авторизация прошла успешно")
+        if (isAuthorized) println("Авторизация прошла успешно")
         else println("Неверный логин/пароль, попробуйте еще раз")
     } while (
-        (!validName)
-        || (!validPass)
+        !isAuthorized
     )
-
-
 
 
 }
