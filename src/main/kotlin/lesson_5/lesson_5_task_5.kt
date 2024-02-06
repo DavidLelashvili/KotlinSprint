@@ -5,13 +5,13 @@ import kotlin.random.nextInt
 
 fun main() {
 
-    var a: Int
-    var smartRandomListOfNumbers = mutableListOf<Int>()
+    var randomNumber: Int
+    val smartRandomListOfNumbers = mutableListOf<Int>()
 
     do {
-        a = Random.nextInt(0..42)
-        if (a !in smartRandomListOfNumbers) {
-            smartRandomListOfNumbers.add(a)
+        randomNumber = Random.nextInt(0..42)
+        if (randomNumber !in smartRandomListOfNumbers) {
+            smartRandomListOfNumbers.add(randomNumber)
         }
     } while (smartRandomListOfNumbers.size < 3)
 
@@ -35,10 +35,12 @@ fun main() {
 
     val overlapSize = listUserNumber.intersect(smartRandomListOfNumbers).size
 
-    val checkResult = if (overlapSize == 3) "Невероятно! Вы угадали все числа и сорвали джекпот"
-    else if (overlapSize == 2) "Сегодня ваш день! Вы отгадали 2 числа и выиграли крупный приз!"
-    else if (overlapSize == 1) "Вы отгадали одно число и выиграли утешительный приз!"
-    else "К сожалению, вы не угадали не одно число!"
+    val checkResult = when (overlapSize) {
+        3 -> "Невероятно! Вы угадали все числа и сорвали джекпот"
+        2 -> "Сегодня ваш день! Вы отгадали 2 числа и выиграли крупный приз!"
+        1 -> "Вы отгадали одно число и выиграли утешительный приз!"
+        else -> "К сожалению, вы не угадали не одно число!"
+    }
 
     println("Загаданными числами были $smartRandomListOfNumbers")
     println(checkResult)
