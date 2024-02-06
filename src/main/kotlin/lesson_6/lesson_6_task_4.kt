@@ -3,33 +3,34 @@ package lesson_6
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-const val TRIES = 5
+const val MAX_TRIES = 5
 
 fun main() {
 
     val number = Random.nextInt(1..9)
     var userNumber: Int
-    var rightNumber: Boolean
-    var i = 0
+    var userTries = 0
+    var checkResult = true
 
+    println(number)
 
-    println("У вас есть $TRIES попыток, чтобы угадать число от 1 до 9!")
+    println("У вас есть $MAX_TRIES попыток, чтобы угадать число от 1 до 9!")
 
-    do {
-        if (i == TRIES) {
-            println("Вы не угадали! Было загадано число $number")
-            break
-        }
-
+    while (checkResult == true && userTries != MAX_TRIES) {
         println("Введите число")
         userNumber = readln().toInt()
 
-        rightNumber = (userNumber == number)
+        checkResult = userNumber != number
 
-        if (rightNumber) println("Вы угадали! Это была великолепная игра!")
+        userTries++
+
+        if ((checkResult == false) || userTries == MAX_TRIES) break
         else println("Неудача, попробуйте снова")
 
-        i++
-    } while (!rightNumber)
+    }
+
+    if (checkResult == false) println("Угадали")
+    else println("Вы не угадали! Было загадано число $number")
+
 
 }
