@@ -9,7 +9,11 @@ fun main() {
 
     val number = Random.nextInt(1..9)
     var userNumber: Int
+    var rightNumber: Boolean
     var i = 0
+
+
+    println("У вас есть $TRIES попыток, чтобы угадать число от 1 до 9!")
 
     do {
         if (i == TRIES) {
@@ -17,13 +21,15 @@ fun main() {
             break
         }
 
-        if (i == 0) println("У вас есть $TRIES попыток, чтобы угадать число от 1 до 9!\nВведите число")
-        else println("Неудача, попробуйте снова\nВведите число")
+        println("Введите число")
         userNumber = readln().toInt()
 
-        if (userNumber == number) println("Вы угадали! Это была великолепная игра!")
+        rightNumber = (userNumber == number)
+
+        if (rightNumber) println("Вы угадали! Это была великолепная игра!")
+        else println("Неудача, попробуйте снова")
 
         i++
-    } while (userNumber != number)
+    } while (!rightNumber)
 
 }
