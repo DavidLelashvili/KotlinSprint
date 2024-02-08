@@ -4,7 +4,7 @@ fun main() {
 
     val verifyCodeRange = (1000..9999)
     var verifyCode: Int
-    var userCode : Int
+    var userCode: Int
     var rightCode: Boolean
 
     do {
@@ -14,7 +14,7 @@ fun main() {
         println("Введите код")
         userCode = readln().toInt()
 
-        rightCode = userCode==verifyCode
+        rightCode = userCode == verifyCode
 
     } while (!rightCode)
 
