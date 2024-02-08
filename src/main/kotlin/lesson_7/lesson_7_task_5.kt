@@ -1,11 +1,13 @@
 package lesson_7
 
+const val PASSWORD_LENGHT_MIN = 6
+
 fun main() {
 
     val numbersRange = (0..9)
     val lowerCaseAlphabetRange = 'a'..'z'
     val upperCaseAlphabetRange = 'A'..'Z'
-    var passwordLenghtMax: Int
+    var passwordLenght: Int
     var pass = ""
 
     val passList = (numbersRange.toList() +
@@ -14,11 +16,11 @@ fun main() {
 
     do {
         println("Введите длину пароля. Минимальная длина пароля - 6 символов")
-        passwordLenghtMax = readln().toInt()
+        passwordLenght = readln().toInt()
 
-    } while (passwordLenghtMax < 6)
+    } while (passwordLenght < PASSWORD_LENGHT_MIN)
 
-    for (i in 1..passwordLenghtMax) {
+    for (i in 1..passwordLenght) {
         pass += passList.random().toString()
     }
 
