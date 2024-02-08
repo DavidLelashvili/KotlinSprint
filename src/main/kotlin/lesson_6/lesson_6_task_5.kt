@@ -1,6 +1,6 @@
 package lesson_6
 
-const val MAX_TRIES = 3
+const val MAX_TRIES_TASK_5 = 3
 
 fun main() {
 
@@ -24,12 +24,12 @@ fun main() {
         userTries++
 
         if (number1 + number2 == sum) println("Добро пожаловать!")
-        else if (userTries < MAX_TRIES) println("Неверно, попробуйте еще раз\nОсталось попыток: ${MAX_TRIES - userTries}")
+        else if (userTries < MAX_TRIES_TASK_5) println("Неверно, попробуйте еще раз\nОсталось попыток: ${MAX_TRIES_TASK_5 - userTries}")
         else println("Доступ запрещен")
 
     } while (
         (number1 + number2 != sum) &&
-        (userTries != MAX_TRIES)
+        (userTries != MAX_TRIES_TASK_5)
     )
 
 }
