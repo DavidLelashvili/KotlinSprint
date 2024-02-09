@@ -8,11 +8,17 @@ fun main() {
     val lowerCaseAlphabetRange = 'a'..'z'
     val upperCaseAlphabetRange = 'A'..'Z'
     var passwordLenght: Int
-    var pass = ""
+    var pass = (
+            numbersRange.random().toString() +
+            lowerCaseAlphabetRange.random().toString() +
+            upperCaseAlphabetRange.random().toString()
+            )
 
-    val passList = (numbersRange.toList() +
+    val passRandomList = (
+            numbersRange.toList() +
             lowerCaseAlphabetRange.toList() +
-            upperCaseAlphabetRange.toList()).shuffled()
+            upperCaseAlphabetRange.toList()
+            ).shuffled()
 
     do {
         println("Введите длину пароля. Минимальная длина пароля - 6 символов")
@@ -20,8 +26,8 @@ fun main() {
 
     } while (passwordLenght < PASSWORD_LENGHT_MIN)
 
-    for (i in 1..passwordLenght) {
-        pass += passList.random().toString()
+    for (i in 1..(passwordLenght - pass.count())) {
+        pass += passRandomList.random().toString()
     }
 
     println("Отлично, ваш сгенерированный пароль: $pass")
