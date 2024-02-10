@@ -6,9 +6,7 @@ fun main() {
     val userNewIngredient: String
     val indexReplaceIngredient :Int
 
-    println("Вот какие ингредиенты входят сейчас в рецепт:")
-    ingredientsArray.forEach { print("$it ") }
-    println()
+    println("Вот какие ингредиенты входят сейчас в рецепт: ${ingredientsArray.contentToString()}")
     println("Введите ингредиент, которых хотите изменить")
     val userReplaceIngredient = readln()
 
@@ -19,8 +17,7 @@ fun main() {
         indexReplaceIngredient = ingredientsArray.indexOf(userReplaceIngredient)
         ingredientsArray.set(indexReplaceIngredient, userNewIngredient)
 
-        println("Готово! Вы сохранили следующий список:")
-        ingredientsArray.forEach { print("$it ") }
+        println("Готово! Вы сохранили следующий список: ${ingredientsArray.contentToString()}")
     } else println("Нет такого ингредиента")
 
 }
