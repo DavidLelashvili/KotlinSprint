@@ -12,8 +12,8 @@ fun main() {
     println("Введите ингредиент, которых хотите изменить")
     val userReplaceIngredient = readln()
 
-    if (userReplaceIngredient in ingredientsArray) {
-        println("Ингредиент найден, на какой хотите заменить")
+    if (ingredientsArray.contains(userReplaceIngredient)) {
+        println("Ингредиент найден! Введите ингредиент, на который хотите заменить")
         userNewIngredient = readln()
 
         indexReplaceIngredient = ingredientsArray.indexOf(userReplaceIngredient)
