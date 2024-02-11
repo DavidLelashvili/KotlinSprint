@@ -30,6 +30,7 @@ fun main() {
         pass += passRandomList.random().toString()
     }
 
-    println("Отлично, ваш сгенерированный пароль: $pass")
+    val shufflePass = pass.toList().shuffled().joinToString("")
+    println("Отлично, ваш сгенерированный пароль: $shufflePass")
 
 }
