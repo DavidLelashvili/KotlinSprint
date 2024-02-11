@@ -8,13 +8,9 @@ fun main() {
     println("Введите ингредиент, чтобы проверить есть ли он в рецепте")
     val userIngredient = readln()
 
-    for (i in ingredientsArray) {
-
-        ingredientContains = (userIngredient == i)
-
-        if (!ingredientContains) continue
-        else break
-
+    for (ingredient in ingredientsArray) {
+        ingredientContains = (userIngredient == ingredient)
+        if (ingredientContains) break
     }
 
     if (ingredientContains) println("Ингредиент $userIngredient в рецепте есть")
