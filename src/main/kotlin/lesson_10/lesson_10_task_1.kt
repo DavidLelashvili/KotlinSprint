@@ -15,8 +15,5 @@ fun main() {
     else println("Победила машина")
 
 }
-fun rollDice(): Int {
 
-    return Random.nextInt(1..6)
-
-}
+fun rollDice() = Random.nextInt(1..6)
