@@ -1,5 +1,7 @@
 package lesson_10
 
+const val CREDENTIAL_LENGHT = 4
+
 fun main() {
 
     println("Введите логин")
@@ -15,7 +17,8 @@ fun main() {
 
 fun validateLenght(login: String, pass: String): Boolean {
 
-    val validateLenght = login.count() <= 4 || pass.count() <= 4
+    val validateLenght = login.count() <= CREDENTIAL_LENGHT ||
+            pass.count() <= CREDENTIAL_LENGHT
     return validateLenght
 
 }
