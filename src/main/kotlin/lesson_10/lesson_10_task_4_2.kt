@@ -6,7 +6,7 @@ import kotlin.random.nextInt
 fun main() {
 
     var choseYes: Boolean
-    val firstRound = countWinRound()
+    val firstRound = countWinGame(checkResult(playRound()))
     var sumWinGames = firstRound
 
     do {
@@ -14,29 +14,43 @@ fun main() {
         val userInput = readln().lowercase()
         choseYes = userInput == "да"
 
-        if (choseYes) sumWinGames += countWinRound()
+        if (choseYes) sumWinGames += countWinGame(checkResult(playRound()))
         else println("Количество выигранных: $sumWinGames")
     } while (choseYes)
 
 }
 
-fun rollDice(): Int = Random.nextInt(1..6)
+fun rollDice1(): Int = Random.nextInt(1..6)
 
-fun countWinRound(): Int {
+fun playRound(): Pair<Int, Int> {
 
-    var winGameCount = 0
-    val userRoll = rollDice()
+    val userRoll = rollDice1()
     println("Бросок пользователя: $userRoll")
-    val botRoll = rollDice()
+    val botRoll = rollDice1()
     println("Бросок бота: $botRoll")
 
-    if (userRoll > botRoll) {
+    return Pair(userRoll, botRoll)
+}
+
+fun checkResult(round: Pair<Int, Int>): Boolean {
+    val userRoll = round.first
+    val botRoll = round.second
+    val checkResult = if (userRoll > botRoll) {
         println("Вы выиграли")
-        winGameCount++
+        true
     } else if (userRoll == botRoll) {
         println("Ничья")
+        false
     } else {
         println("Вы проиграли")
+        false
     }
+    return checkResult
+
+}
+
+fun countWinGame(winGame: Boolean): Int {
+    var winGameCount = 0
+    if (winGame) winGameCount++
     return winGameCount
 }
