@@ -5,38 +5,65 @@ import kotlin.random.nextInt
 
 fun main() {
 
-    var choseYes: Boolean
-    val firstRound = countWinRound()
-    var sumWinGames = firstRound
+    var sumWinGames = 0
+    var oneMoreGame: Boolean
+    var round = 1
 
     do {
-        println("Хотите бросить кости еще раз? Введите Да или Нет")
-        val userInput = readln().lowercase()
-        choseYes = userInput == "да"
+        if (round == 1) sumWinGames = countWinGame(checkResult(playRound()))
 
-        if (choseYes) sumWinGames += countWinRound()
+        oneMoreGame = playOneMoreGame()
+
+        if (oneMoreGame) sumWinGames += countWinGame(checkResult(playRound()))
         else println("Количество выигранных: $sumWinGames")
-    } while (choseYes)
+
+        round++
+    } while (oneMoreGame)
 
 }
 
 fun rollDice(): Int = Random.nextInt(1..6)
 
-fun countWinRound(): Int {
+fun playRound(): Pair<Int, Int> {
 
-    var winGameCount = 0
     val userRoll = rollDice()
     println("Бросок пользователя: $userRoll")
     val botRoll = rollDice()
     println("Бросок бота: $botRoll")
 
-    if (userRoll > botRoll) {
-        println("Вы выиграли")
-        winGameCount++
-    } else if (userRoll == botRoll) {
-        println("Ничья")
-    } else {
-        println("Вы проиграли")
+    return Pair(userRoll, botRoll)
+}
+
+fun checkResult(round: Pair<Int, Int>): Boolean {
+    val userRoll = round.first
+    val botRoll = round.second
+    val checkResult = when {
+        userRoll > botRoll -> {
+            println("Вы выиграли"); true
+        }
+
+        userRoll == botRoll -> {
+            println("Ничья"); false
+        }
+
+        else -> {
+            println("Вы проиграли"); false
+        }
     }
+    return checkResult
+
+}
+
+fun countWinGame(winGame: Boolean): Int {
+    var winGameCount = 0
+    if (winGame) winGameCount++
     return winGameCount
+}
+
+fun playOneMoreGame(): Boolean {
+    val choseYes: Boolean
+    println("Хотите бросить кости еще раз? Введите Да или Нет")
+    val userInput = readln()
+    choseYes = userInput.equals("да", ignoreCase = true)
+    return choseYes
 }
