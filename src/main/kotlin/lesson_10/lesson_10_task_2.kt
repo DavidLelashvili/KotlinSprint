@@ -10,15 +10,12 @@ fun main() {
     println("Введите пароль")
     val userPass = readln()
 
-    if (validateLenght(userLogin, userPass)) println("Логин или пароль недостаточно длинные")
+    if (
+        validateLenght(userLogin) ||
+        validateLenght(userPass)
+    ) println("Логин или пароль недостаточно длинные")
     else println("Добро пожаловать")
 
 }
 
-fun validateLenght(login: String, pass: String): Boolean {
-
-    val validateLenght = login.count() <= CREDENTIAL_LENGHT ||
-            pass.count() <= CREDENTIAL_LENGHT
-    return validateLenght
-
-}
+fun validateLenght(credential: String): Boolean = credential.count() <= CREDENTIAL_LENGHT
