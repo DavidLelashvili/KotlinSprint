@@ -1,5 +1,6 @@
 package lesson_10
 
+const val TOKEN_SIZE = 32
 
 fun main() {
     val login = "login"
@@ -48,7 +49,7 @@ fun composeElementList(): List<Char?> {
 fun generateToken(): String {
     var generateToken = ""
     val shuffledList = composeElementList().shuffled()
-    for (element in 1..32) {
+    for (element in 1..TOKEN_SIZE) {
         generateToken += shuffledList.random().toString()
     }
     return generateToken
