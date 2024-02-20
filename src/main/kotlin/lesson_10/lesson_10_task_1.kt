@@ -5,9 +5,9 @@ import kotlin.random.nextInt
 
 fun main() {
 
-    val userRoll = rollDice()
+    val userRoll = rollDiceForTaskOne()
     println("Бросок пользователя: $userRoll")
-    val botRoll = rollDice()
+    val botRoll = rollDiceForTaskOne()
     println("Бросок бота: $botRoll")
 
     if (userRoll > botRoll) println("Победило человечество")
@@ -16,4 +16,4 @@ fun main() {
 
 }
 
-fun rollDice() = Random.nextInt(1..6)
+fun rollDiceForTaskOne() = Random.nextInt(1..6)

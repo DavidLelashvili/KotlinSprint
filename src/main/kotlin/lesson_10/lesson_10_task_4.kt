@@ -22,13 +22,13 @@ fun main() {
 
 }
 
-fun rollDice(): Int = Random.nextInt(1..6)
+fun rollDiceForTaskFour(): Int = Random.nextInt(1..6)
 
 fun playRound(): Pair<Int, Int> {
 
-    val userRoll = rollDice()
+    val userRoll = rollDiceForTaskFour()
     println("Бросок пользователя: $userRoll")
-    val botRoll = rollDice()
+    val botRoll = rollDiceForTaskFour()
     println("Бросок бота: $botRoll")
 
     return Pair(userRoll, botRoll)
