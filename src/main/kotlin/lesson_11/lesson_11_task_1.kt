@@ -1,7 +1,5 @@
 package lesson_11
 
-import kotlin.random.Random
-
 class User(
     val id: Int,
     val login: String,
@@ -9,15 +7,17 @@ class User(
     val mail: String,
 )
 
+fun getRandomId() = (0..9999).random()
+
 fun main() {
     val user1 = User(
-        Random.nextInt(0, 9999),
+        getRandomId(),
         "login1",
         "pass1",
         "mail@mail.com",
     )
     val user2 = User(
-        Random.nextInt(0, 9999),
+        getRandomId(),
         "login2",
         "pass2",
         "mail2@mail.com",
