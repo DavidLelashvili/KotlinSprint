@@ -18,7 +18,7 @@ class User2(
         """.trimIndent())
     }
 
-    fun getUserBio() {
+    fun fillUserBio() {
         println("Введите информацию о себе")
         bio = readln()
     }
@@ -45,7 +45,7 @@ fun main() {
         "mail@mail.com",
     )
 
-    user.getUserBio()
+    user.fillUserBio()
     user.changeUserPassword()
     user.getUserInfo()
 
