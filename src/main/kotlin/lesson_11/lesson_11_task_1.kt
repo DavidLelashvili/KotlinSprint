@@ -1,6 +1,6 @@
 package lesson_11
 
-class User(
+class UserTask1(
     val id: Int,
     val login: String,
     val pass: String,
@@ -10,13 +10,13 @@ class User(
 fun getRandomId() = (0..9999).random()
 
 fun main() {
-    val user1 = User(
+    val user1 = UserTask1(
         getRandomId(),
         "login1",
         "pass1",
         "mail@mail.com",
     )
-    val user2 = User(
+    val user2 = UserTask1(
         getRandomId(),
         "login2",
         "pass2",

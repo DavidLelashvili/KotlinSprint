@@ -3,10 +3,10 @@ package lesson_11
 class MeetingRoom(
     val cover: String,
     val name: String,
-    val users: MutableList<Users> = mutableListOf(),
+    val users: MutableList<UserTask3> = mutableListOf(),
 ) {
 
-    fun addUserToMeetingRoom(user: Users): Boolean {
+    fun addUserToMeetingRoom(user: UserTask3): Boolean {
         println("Добавляем ${user.name} в комнату $name")
         return users.add(user)
     }
@@ -21,18 +21,19 @@ class MeetingRoom(
         )
     }
 
+    fun userUpdateStatus(user: UserTask3, userNewStatus: String) {
+        user.status = userNewStatus
+    }
+
 }
 
 
-class Users(
+class UserTask3(
     val avatar: String,
     var name: String,
     var status: String,
 ) {
 
-    fun userUpdateStatus(userName: String, userNewStatus: String) {
-        if (userName == name) status = userNewStatus
-    }
 
     fun getUserInfo() {
         println("Аватор - $avatar")
@@ -48,12 +49,12 @@ fun main() {
     val disableMic = "микрофон выключен"
     val blockUser = "пользователь заглушен"
 
-    val user1 = Users(
+    val user1 = UserTask3(
         "Аватар1",
         "Юзер1",
         talking,
     )
-    val user2 = Users(
+    val user2 = UserTask3(
         "Аватар2",
         "Юзер2",
         disableMic,
@@ -72,11 +73,11 @@ fun main() {
     println()
     meetingRoom1.addUserToMeetingRoom(user1)
     println("Обновлние статуса юзера1")
-    user1.userUpdateStatus("Юзер1", disableMic)
+    meetingRoom1.userUpdateStatus(user1, disableMic)
     user1.getUserInfo()
     println()
     meetingRoom1.addUserToMeetingRoom(user2)
-    user2.userUpdateStatus("Юзер2", blockUser)
+    meetingRoom1.userUpdateStatus(user2, blockUser)
     user2.getUserInfo()
     println()
     println("Информация по комнате")
